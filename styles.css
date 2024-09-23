@@ -1,156 +1,245 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keyfim ve Kahyası</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap">
-    <style>
-        /* Slider container */
-        .slider-container {
-            width: 80%;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 25px;
-        }
+/* Genel stil ayarları */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4efea;
+    color: #3c3c3b;
+    user-select: none; /* Modern tarayıcılar için */
+    -moz-user-select: none; /* Firefox için */
+    -webkit-user-select: none; /* Safari ve Chrome için */
+}
 
-        /* Slider wrapper */
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+.footer-panel {
+    text-align: right;
+}
 
-        /* Slide items */
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
+/* Başlık stili */
+header {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        .slide img {
-            width: 400; height: 300;
-            border-radius: 25px;
-            height: 400px;
-            object-fit: cover;
-            align-items: center;
-        }
+header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+}
 
-        /* Navigation buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-        }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .prev {
-            left: 10px;
-        }
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
 
-        .next {
-            right: 10px;
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
 
-        /* Smooth scroll for links */
-        html {
-            scroll-behavior: smooth;
-        }
+nav ul li a:hover {
+    text-decoration: underline;
+}
 
-    </style>
-</head>
-<body>
-    <!-- Navbar -->
-    <header>
-        <h1>Keyfim ve Kahyası</h1>
-        <nav>
-            <ul>
-                <li><a href="#keyfim">Keyfim</a></li>
-                <li><a href="#kahyam">Kahyam</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Hero bölümü */
+.hero {
+    background-image: url('');
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
 
-    <!-- Keyfim Section -->
-    <section id="keyfim">
-        <h3>Keyfim</h3>
-        <p>Keyif yapmanın en güzel yollarını keşfet! Kahveni al, arkana yaslan ve anın tadını çıkar.</p>
-        
-        <!-- Slider -->
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="slide">
-                    <img src="./images/keyif1.jpg" alt="Keyif 1">
-                </div>
-                <div class="slide">
-                    <img src="./images/keyif2.jpg" alt="Keyif 2">
-                </div>
-                <div class="slide">
-                    <img src="./images/keyif3.jpg" alt="Keyif 3">
-                </div>
-            </div>
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
 
-            <!-- Navigation buttons -->
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
-        </div>
-    </section>
+.hero h2 {
+    font-size: 36px;
+    z-index: 1;
+    position: relative;
+}
 
-    <!-- İletişim Section -->
-    <section id="iletisim">
-        <h3>İletişim</h3>
-        <h4>Tabii ki bana mesaj gönderebilirsiniz :)</h4>
-        <form id="contact-form">
-            <input type="text" id="name" name="name" placeholder="Adınız" required>
-            <input type="email" id="email" name="email" placeholder="Email adresiniz" required>
-            <textarea id="message" name="message" placeholder="Mesajınız" required></textarea>
-            <button type="submit">Gönder</button>
-        </form>
-        <p id="message-status"></p>
-    </section>
-    <div class="footer-panel">
-        Ökkeş Enes Kaymaz  - © 2024 Keyfim ve Kahyası
-    </div>
-    <!-- Slider script -->
-    <script>
-        let currentIndex = 0;
+.hero p {
+    z-index: 1;
+    position: relative;
+    font-size: 20px;
+}
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            const totalSlides = slides.length;
+/* Bölüm başlıkları */
+section h3 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    color: #8b4513;
+}
 
-            if (index >= totalSlides) {
-                currentIndex = 0; 
-            } else if (index < 0) {
-                currentIndex = totalSlides - 1; 
-            } else {
-                currentIndex = index;
-            }
+/* Keyfim bölümü */
+#keyfim {
+    padding: 50px 20px;
+    text-align: center;
+}
 
-            const sliderWrapper = document.querySelector('.slider-wrapper');
-            const offset = -currentIndex * 100; 
-            sliderWrapper.style.transform = `translateX(${offset}%)`;
-        }
+#keyfim img {
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        document.querySelector('.next').addEventListener('click', function () {
-            showSlide(currentIndex + 1);
-        });
+/* İletişim bölümüne özel stil */
+#iletisim {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f5f0; /* Arka plan rengi */
+    border-top: 2px solid #8b4513; /* Üst sınır çizgisi */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Gölgelendirme */
+}
 
-        document.querySelector('.prev').addEventListener('click', function () {
-            showSlide(currentIndex - 1);
-        });
+#iletisim h3 {
+    font-size: 32px;
+    color: #8b4513;
+    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive; /* Başlık için zarif font */
+}
 
-       
-        setInterval(function () {
-            showSlide(currentIndex + 1);
-        }, 10000); // 5 saniye bekle
-    </script>
+#iletisim form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Beyaz arka plan */
+    border-radius: 10px; /* Yumuşak köşeler */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Gölgelendirme */
+}
 
-</body>
-</html>
+/* Form alanları */
+#iletisim input, #iletisim textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #8b4513; /* Kahverengi sınır */
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Modern bir yazı tipi */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Hafif gölgelendirme */
+    transition: all 0.3s ease;
+}
+
+#iletisim input:focus, #iletisim textarea:focus {
+    outline: none;
+    border-color: #70411b; /* Odaklanıldığında sınır rengi değişir */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Textarea stili */
+#iletisim textarea {
+    height: 150px;
+    resize: vertical; /* Yükseklik ayarlanabilir */
+}
+
+/* Gönder butonu */
+#iletisim button {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#iletisim button:hover {
+    background-color: #70411b; /* Üzerine gelince renk değişimi */
+    transform: scale(1.05); /* Hafif büyüme efekti */
+}
+
+#iletisim button:active {
+    transform: scale(0.98); /* Tıklanıldığında hafif küçülme efekti */
+}
+
+/* Mobil uyumlu tasarım */
+@media (max-width: 768px) {
+    /* Genel font ve alan ayarlamaları */
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Header ve başlık ayarları */
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Hero bölümü ayarları */
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Slider */
+    .slider-container {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    /* İletişim formu */
+    #iletisim form {
+        max-width: 90%;
+    }
+
+    #iletisim input, #iletisim textarea {
+        font-size: 14px;
+    }
+
+    #iletisim button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    /* Footer panel */
+    .footer-panel {
+        font-size: 12px;
+        text-align: center;
+        padding: 10px;
+    }
+}
