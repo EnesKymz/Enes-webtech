@@ -10,7 +10,10 @@ body {
     -moz-user-select: none; /* Firefox için */
     -webkit-user-select: none; /* Safari ve Chrome için */
 }
-
+.footer-panel{
+    text-align: right;
+    
+}
 /* Başlık stili */
 header {
     background-color: #8b4513;
