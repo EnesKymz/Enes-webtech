@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyfim ve Kahyası</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap">
+    <style>
+        /* Slider container */
+        .slider-container {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        /* Slider wrapper */
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Slide items */
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 400; height: 300;
+            border-radius: 25px;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Smooth scroll for links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <h1>Keyfim ve Kahyası</h1>
+        <nav>
+            <ul>
+                <li><a href="#keyfim">Keyfim</a></li>
+                <li><a href="#kahyam">Kahyam</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Keyfim Section -->
+    <section id="keyfim">
+        <h3>Keyfim</h3>
+        <p>Keyif yapmanın en güzel yollarını keşfet! Kahveni al, arkana yaslan ve anın tadını çıkar.</p>
+        
+        <!-- Slider -->
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <img src="./images/keyif1.jpg" alt="Keyif 1">
+                </div>
+                <div class="slide">
+                    <img src="./images/keyif2.jpg" alt="Keyif 2">
+                </div>
+                <div class="slide">
+                    <img src="./images/keyif3.jpg" alt="Keyif 3">
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- İletişim Section -->
+    <section id="iletisim">
+        <h3>İletişim</h3>
+        <h4>Tabii ki bana mesaj gönderebilirsiniz :)</h4>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Adınız" required>
+            <input type="email" id="email" name="email" placeholder="Email adresiniz" required>
+            <textarea id="message" name="message" placeholder="Mesajınız" required></textarea>
+            <button type="submit">Gönder</button>
+        </form>
+        <p id="message-status"></p>
+    </section>
+
+    <!-- Slider script -->
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            if (index >= totalSlides) {
+                currentIndex = 0; 
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1; 
+            } else {
+                currentIndex = index;
+            }
+
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            const offset = -currentIndex * 100; 
+            sliderWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        document.querySelector('.next').addEventListener('click', function () {
+            showSlide(currentIndex + 1);
+        });
+
+        document.querySelector('.prev').addEventListener('click', function () {
+            showSlide(currentIndex - 1);
+        });
+
+       
+        setInterval(function () {
+            showSlide(currentIndex + 1);
+        }, 10000); // 5 saniye bekle
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4efea;
+    color: #3c3c3b;
+    user-select: none; /* Modern tarayıcılar için */
+    -moz-user-select: none; /* Firefox için */
+    -webkit-user-select: none; /* Safari ve Chrome için */
+}
+
+/* Başlık stili */
+header {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero bölümü */
+.hero {
+    background-image: url('');
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 36px;
+    z-index: 1;
+    position: relative;
+}
+
+.hero p {
+    z-index: 1;
+    position: relative;
+    font-size: 20px;
+}
+
+/* Bölüm başlıkları */
+section h3 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    color: #8b4513;
+}
+
+/* Keyfim bölümü */
+#keyfim {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#keyfim img {
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* İletişim bölümüne özel stil */
+#iletisim {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f5f0; /* Arka plan rengi */
+    border-top: 2px solid #8b4513; /* Üst sınır çizgisi */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Gölgelendirme */
+}
+
+#iletisim h3 {
+    font-size: 32px;
+    color: #8b4513;
+    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive; /* Başlık için zarif font */
+}
+
+#iletisim form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Beyaz arka plan */
+    border-radius: 10px; /* Yumuşak köşeler */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Gölgelendirme */
+}
+
+/* Form alanları */
+#iletisim input, #iletisim textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #8b4513; /* Kahverengi sınır */
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Modern bir yazı tipi */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Hafif gölgelendirme */
+    transition: all 0.3s ease;
+}
+
+#iletisim input:focus, #iletisim textarea:focus {
+    outline: none;
+    border-color: #70411b; /* Odaklanıldığında sınır rengi değişir */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Textarea stili */
+#iletisim textarea {
+    height: 150px;
+    resize: vertical; /* Yükseklik ayarlanabilir */
+}
+
+/* Gönder butonu */
+#iletisim button {
+    background-color: #8b4513;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#iletisim button:hover {
+    background-color: #70411b; /* Üzerine gelince renk değişimi */
+    transform: scale(1.05); /* Hafif büyüme efekti */
+}
+
+#iletisim button:active {
+    transform: scale(0.98); /* Tıklanıldığında hafif küçülme efekti */
+}
+
+/*
