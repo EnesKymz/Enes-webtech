@@ -17,11 +17,35 @@ body {
 
 /* Başlık stili */
 header {
-    background-color: #8b4513;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Elemanları aralarındaki boşlukları eşitler */
+    align-items: center; /* Dikey olarak ortalar */
+    padding: 10px 20px;
+    background-color: #8b4513; /* Arka plan rengi */
 }
+.title{
+    color:white;
+}
+.header-content {
+    flex: 1; /* Bu bölüm genişliğini alır */
+    text-align: center; /* Başlığı ortalar */
+}
+
+.social-media {
+    display: flex; /* Sosyal medya butonlarını yan yana yerleştirir */
+    flex-direction: column; /* Butonları dikey hizalar */
+    align-items: flex-start; /* Soldan hizalar */
+}
+
+.social-media a {
+    margin-bottom: 5px; /* Butonlar arasında boşluk bırakır */
+}
+
+.social-media img {
+    width: 30px; /* İkon boyutu */
+    height: 30px;
+}
+
 
 header h1 {
     font-family: 'Great Vibes', cursive;
