@@ -114,14 +114,24 @@
         <p id="message-status"></p>
     </div>
     <script>
-        // Formun submit olayını dinleyerek sayfanın yenilenmesini engelle
-        document.getElementById("iletisim").addEventListener("submit", function(event){
-            event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
-    
-            // Burada form verilerini işleyebilir veya başka işlemler yapabilirsiniz
-            alert("Mesajınız başarıyla gönderildi!"); // Form gönderildikten sonra yapılacak işlem
-        });
-    </script>
+      function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = message;
+    document.body.appendChild(toast);
+
+    setTimeout(function() {
+        toast.className += " show";
+    }, 100);
+
+    setTimeout(function() {
+        toast.className = toast.className.replace(" show", "");
+        document.body.removeChild(toast);
+    }, 3000);
+    }
+
+    // Mesaj gönderildikten sonra çağır
+   </script>
     <!-- EmailJS script -->
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -136,26 +146,28 @@
     <script>
         // Formun gönderim işlemi
         document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Formun varsayılan gönderim davranışını önler
+    event.preventDefault(); // Formun varsayılan gönderim davranışını önler
 
-            // Kullanıcıdan alınan veriler
-            var templateParams = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
+    // Kullanıcıdan alınan veriler
+    var templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
 
-            // EmailJS ile mail gönderimi
-            emailjs.send('service_1hm2ivv', 'template_os3q2m4', templateParams)
-                .then(function (response) {
-                    document.getElementById('message-status').innerHTML = "Mesajınız başarıyla gönderildi!";
-                }, function (error) {
-                    document.getElementById('message-status').innerHTML = "Mesaj gönderilirken bir hata oluştu.";
-                });
-
-            // Form alanlarını temizle
-            document.getElementById('contact-form').reset();
+    // EmailJS ile mail gönderimi
+    emailjs.send('service_1hm2ivv', 'template_os3q2m4', templateParams)
+        .then(function (response) {
+            document.getElementById('message-status').innerHTML = "Mesajınız başarıyla gönderildi!";
+            showToast("Mesajınız başarıyla gönderildi!"); // Mesaj gönderimi başarılı olunca toast göster
+        }, function (error) {
+            document.getElementById('message-status').innerHTML = "Mesaj gönderilirken bir hata oluştu.";
         });
+
+    // Form alanlarını temizle
+    document.getElementById('contact-form').reset();
+});
+
     </script>
 
     <!-- Slider script -->
@@ -180,13 +192,14 @@
         }
 
         document.querySelector('.next').addEventListener('click', function () {
-            showSlide(currentIndex + 1);
+        showSlide(currentIndex + 1);
+        clearInterval(autoSlideInterval); // Otomatik geçişi durdur
         });
 
         document.querySelector('.prev').addEventListener('click', function () {
-            showSlide(currentIndex - 1);
+        showSlide(currentIndex - 1);
+        clearInterval(autoSlideInterval); // Otomatik geçişi durdur
         });
-
        
         setInterval(function () {
             showSlide(currentIndex + 1);

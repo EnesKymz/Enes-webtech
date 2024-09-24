@@ -173,6 +173,35 @@ section h3 {
 #iletisim button:active {
     transform: scale(0.98); /* Tıklanıldığında hafif küçülme efekti */
 }
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 1;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px;
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
 
 /* Mobil uyumlu tasarım */
 @media (max-width: 768px) {
