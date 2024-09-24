@@ -19,7 +19,7 @@
         /* Slider wrapper */
         .slider-wrapper {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.8s ease-in-out;
         }
 
         /* Slide items */
@@ -33,6 +33,7 @@
             border-radius: 25px;
             height: 400px;
             object-fit: cover;
+            align-items: center;
         }
 
         /* Navigation buttons */
@@ -102,9 +103,8 @@
     </section>
 
     <!-- İletişim Section -->
-    <section id="iletisim">
+    <div id="iletisim">
         <h3>İletişim</h3>
-        <h4>Tabii ki bana mesaj gönderebilirsiniz :)</h4>
         <form id="contact-form">
             <input type="text" id="name" name="name" placeholder="Adınız" required>
             <input type="email" id="email" name="email" placeholder="Email adresiniz" required>
@@ -112,10 +112,52 @@
             <button type="submit">Gönder</button>
         </form>
         <p id="message-status"></p>
-    </section>
-    <div class="footer-panel">
-        Ökkeş Enes Kaymaz  - © 2024 Keyfim ve Kahyası
     </div>
+    <script>
+        // Formun submit olayını dinleyerek sayfanın yenilenmesini engelle
+        document.getElementById("iletisim").addEventListener("submit", function(event){
+            event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
+    
+            // Burada form verilerini işleyebilir veya başka işlemler yapabilirsiniz
+            alert("Form başarıyla gönderildi!"); // Form gönderildikten sonra yapılacak işlem
+        });
+    </script>
+    <!-- EmailJS script -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("WGQREoXc_PaSGe87_"); // Buraya doğru Public Key'i yerleştirin
+        })();
+    </script>
+
+    <script>
+        // Formun gönderim işlemi
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Formun varsayılan gönderim davranışını önler
+
+            // Kullanıcıdan alınan veriler
+            var templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            // EmailJS ile mail gönderimi
+            emailjs.send('service_1hm2ivv', 'template_os3q2m4', templateParams)
+                .then(function (response) {
+                    document.getElementById('message-status').innerHTML = "Mesajınız başarıyla gönderildi!";
+                }, function (error) {
+                    document.getElementById('message-status').innerHTML = "Mesaj gönderilirken bir hata oluştu.";
+                });
+
+            // Form alanlarını temizle
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+
     <!-- Slider script -->
     <script>
         let currentIndex = 0;
