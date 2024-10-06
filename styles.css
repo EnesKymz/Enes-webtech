@@ -1,312 +1,176 @@
-/* Genel stil ayarları */
-body {
-    font-family: 'Poppins', sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f4efea;
-    color: #3c3c3b;
-    user-select: none; /* Modern tarayıcılar için */
-    -moz-user-select: none; /* Firefox için */
-    -webkit-user-select: none; /* Safari ve Chrome için */
 }
 
-
-.footer-panel {
-    text-align: right;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
-/* Başlık stili */
 header {
-    display: flex;
-    justify-content: space-between; /* Elemanları aralarındaki boşlukları eşitler */
-    align-items: center; /* Dikey olarak ortalar */
-    padding: 10px 20px;
-    background-color: #8b4513; /* Arka plan rengi */
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
-.title{
-    color:white;
-}
+
 .header-content {
-    flex: 1; /* Bu bölüm genişliğini alır */
-    text-align: center; /* Başlığı ortalar */
-}
-
-.social-media {
-    display: flex; /* Sosyal medya butonlarını yan yana yerleştirir */
-    flex-direction: column; /* Butonları dikey hizalar */
-    align-items: flex-start; /* Soldan hizalar */
-}
-
-.social-media a {
-    margin-bottom: 5px; /* Butonlar arasında boşluk bırakır */
-}
-
-.social-media img {
-    width: 30px; /* İkon boyutu */
-    height: 30px;
-}
-
-
-header h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Merkezleme */
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Satır sonuna sığmayanları yeni satıra al */
+    justify-content: center; /* Ortada hizala */
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img,
+.tools img {
+    width: 40px; /* Resimlerin genişliği */
+    height: auto; /* Yükseklik otomatik ayar */
+    max-width: 100%; /* Resim maksimum genişliği */
+}
+
+.section {
+    padding: 20px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    text-align: center;
+}
+
+h1, h3 {
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+ul li {
+    margin: 10px 0;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+.social-links {
+    display: flex;
+    justify-content: center;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.tools {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* Hero bölümü */
-.hero {
-    background-image: url('');
-    background-size: cover;
-    position: relative;
-    text-align: center;
-    color: white;
-    padding: 100px 20px;
-}
-
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero h2 {
-    font-size: 36px;
-    z-index: 1;
-    position: relative;
-}
-
-.hero p {
-    z-index: 1;
-    position: relative;
-    font-size: 20px;
-}
-
-/* Bölüm başlıkları */
-section h3 {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 28px;
-    color: #8b4513;
-}
-
-/* Keyfim bölümü */
-#keyfim {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#keyfim img {
-    margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* İletişim bölümüne özel stil */
-#iletisim {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f9f5f0; /* Arka plan rengi */
-    border-top: 2px solid #8b4513; /* Üst sınır çizgisi */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Gölgelendirme */
-}
-
-#iletisim h3 {
-    font-size: 32px;
-    color: #8b4513;
-    margin-bottom: 20px;
-    font-family: 'Great Vibes', cursive; /* Başlık için zarif font */
-}
-
-#iletisim form {
+#contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff; /* Beyaz arka plan */
-    border-radius: 10px; /* Yumuşak köşeler */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Gölgelendirme */
 }
 
-/* Form alanları */
-#iletisim input, #iletisim textarea {
-    width: 100%;
-    padding: 15px;
+#contact-form input,
+#contact-form textarea {
+    width: 80%;
+    max-width: 400px; /* Form elemanları için maksimum genişlik */
     margin: 10px 0;
-    border: 2px solid #8b4513; /* Kahverengi sınır */
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif; /* Modern bir yazı tipi */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Hafif gölgelendirme */
-    transition: all 0.3s ease;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-#iletisim input:focus, #iletisim textarea:focus {
-    outline: none;
-    border-color: #70411b; /* Odaklanıldığında sınır rengi değişir */
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Textarea stili */
-#iletisim textarea {
-    height: 150px;
-    resize: vertical; /* Yükseklik ayarlanabilir */
-}
-
-/* Gönder butonu */
-#iletisim button {
-    background-color: #8b4513;
+#contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
-    padding: 12px 30px;
     border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#iletisim button:hover {
-    background-color: #70411b; /* Üzerine gelince renk değişimi */
-    transform: scale(1.05); /* Hafif büyüme efekti */
+#contact-form button:hover {
+    background-color: #0056b3;
 }
 
-#iletisim button:active {
-    transform: scale(0.98); /* Tıklanıldığında hafif küçülme efekti */
-}
-.toast {
-    visibility: hidden;
-    min-width: 250px;
-    background-color: #4caf50;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    position: fixed;
-    z-index: 1;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 16px;
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.toast.show {
-    visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
-}
-
-/* Mobil uyumlu tasarım */
+/* Mobil uyum için medya sorguları */
 @media (max-width: 768px) {
-    /* Genel font ve alan ayarlamaları */
-    body {
-        font-size: 14px;
-        padding: 10px;
+    .header-content {
+        flex-direction: column; /* Başlık içeriğini dikey hizala */
     }
 
-    /* Header ve başlık ayarları */
+    nav ul {
+        flex-direction: column; /* Menü elemanlarını dikey sırala */
+        padding: 10px 0;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        width: 90%; /* Form elemanları için genişlik artırıldı */
+    }
+
+    .tools {
+        flex-wrap: wrap; /* Araçları yeni satıra al */
+        justify-content: center; /* Ortada hizala */
+    }
+
+    .tools img {
+        width: 30px; /* Mobilde resim boyutunu küçült */
+        height: 30px;
+    }
+}
+
+/* Küçük ekranlar için daha fazla düzenleme */
+@media (max-width: 480px) {
     header {
         padding: 15px;
     }
 
-    header h1 {
-        font-size: 32px;
+    h1 {
+        font-size: 1.5rem; /* Başlık boyutunu küçült */
     }
 
-    nav ul li {
-        display: block;
-        text-align: center;
-        margin: 10px 0;
+    h3 {
+        font-size: 1.2rem; /* Alt başlık boyutunu küçült */
     }
 
-    nav ul li a {
-        font-size: 16px;
+    #contact-form input,
+    #contact-form textarea {
+        width: 95%; /* Form elemanları için genişlik artırıldı */
     }
 
-    /* Hero bölümü ayarları */
-    .hero h2 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    /* Slider */
-    .slider-container {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .slide img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 25px;
-    }
-    
-
-    /* İletişim formu */
-    #iletisim form {
-        max-width: 90%;
-    }
-
-    #iletisim input, #iletisim textarea {
-        font-size: 14px;
-    }
-
-    #iletisim button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    /* Footer panel */
-    .footer-panel {
-        font-size: 12px;
-        text-align: center;
-        padding: 10px;
+    #contact-form button {
+        width: 95%; /* Buton genişliği */
     }
 }
-@media (max-width: 768px) {
-    .slider-container {
-        width: 100%;
-    }
-
-    .social-media img {
-        width: 25px;
-        height: 25px;
-    }
-}
-

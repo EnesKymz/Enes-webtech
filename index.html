@@ -6,74 +6,7 @@
     <title>Enes-WebTech</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap">
-    <style>
-        /* Slider container */
-        .slider-container {
-            width: 80%;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 25px;
-        }
-
-        /* Slider wrapper */
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.8s ease-in-out;
-        }
-
-        /* Slide items */
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .slide img {
-            width: 400; height: 300;
-            border-radius: 25px;
-            height: 400px;
-            object-fit: cover;
-            align-items: center;
-        }
-
-        /* Navigation buttons */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        /* Smooth scroll for links */
-        html {
-            scroll-behavior: smooth;
-        }
-
-    </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ8PJX91MT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HQ8PJX91MT');
-</script>
-
 <body>
     <!-- Navbar -->
     <header>
@@ -81,55 +14,65 @@
             <h1 class="title">Ökkeş Enes</h1>
             <nav>
                 <ul>
-                    <li><a href="#keyfim">Keyfim</a></li>
-                    <li><a href="#kahyam">Kahyam</a></li>
+                    <li><a href="#keyfim">Hakkımda</a></li>
                     <li><a href="#iletisim">İletişim</a></li>
                 </ul>
             </nav>
         </div>
         <div class="social-media">
-            <a href="https://www.instagram.com/enes_kymz99/" target="_blank">
-                <img  src="./images/Instagram_icon.png.webp" alt="Instagram">
+            <a href="https://www.instagram.com/enes_kymz99/" target="_blank" rel="noopener noreferrer">
+                <img src="./images/Instagram_icon.png.webp" alt="Instagram">
             </a>
-            <a href="https://www.linkedin.com/in/okkes-enes/" target="_blank">
-                <img  src="./images/linkedin.png" alt="Linkedin">
+            <a href="https://www.linkedin.com/in/okkes-enes/" target="_blank" rel="noopener noreferrer">
+                <img src="./images/linkedin.png" alt="Linkedin">
             </a>
-            <a href="https://github.com/OEK79" target="_blank">
+            <a href="https://github.com/OEK79" target="_blank" rel="noopener noreferrer">
                 <img src="./images/github.png" alt="Github">
             </a>
         </div>
     </header>
-    
 
     <!-- Keyfim Section -->
-    <section id="keyfim">
-       
-        
-        <!-- Slider -->
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="slide">
-                    <img src="./images/keyif1.jpg" alt="Keyif 1">
-                </div>
-                <div class="slide">
-                    <img src="./images/keyif2.jpg" alt="Keyif 2">
-                </div>
-                <div class="slide">
-                    <img src="./images/keyif3.jpg" alt="Keyif 3">
-                </div>
-            </div>
+    <section id="keyfim" class="section">
+        <div class="content">
+            <h1>Merhaba👋, Ben Ökkeş Enes Kaymaz</h1>
+            <p>Tüm projelerime buradan ulaşabilirsiniz: 
+                <a href="https://github.com/EnesKymz" target="_blank" rel="noopener noreferrer">github.com/EnesKymz</a>
+            </p>
+            <ul>
+                <li>📝 Kişisel Web Sitem: <a href="https://enes-webtech.netlify.app" target="_blank" rel="noopener noreferrer">enes-webtech.netlify.app</a></li>
+                <li>💬 **C#** hakkında sorularınızı sorabilirsiniz.</li>
+                <li>📫 İletişim için: <strong>okkeseneskaymaz@proton.me</strong></li>
+            </ul>
 
-            <!-- Navigation buttons -->
-            <button class="prev" aria-label="Previous Slide">&#10094;</button>
-            <button class="next" aria-label="Next Slide">&#10095;</button>
-            
+           
+
+            <h3>Languages and Tools:</h3>
+            <div class="tools">
+                <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" />
+                </a>
+                <a href="https://www.w3schools.com/cs/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" />
+                </a>
+                <a href="https://dotnet.microsoft.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" />
+                </a>
+                <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" />
+                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" />
+                </a>
+            </div>
         </div>
+
+  
     </section>
 
     <!-- İletişim Section -->
-    <div id="iletisim">
+    <div id="iletisim" class="section">
         <h3>İletişim :)</h3>
-        
         <form id="contact-form">
             <input type="text" id="name" name="name" placeholder="Adınız" required>
             <input type="email" id="email" name="email" placeholder="Email adresiniz" required>
@@ -138,98 +81,14 @@
         </form>
         <p id="message-status"></p>
     </div>
-    <script>
-      function showToast(message) {
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.innerHTML = message;
-    document.body.appendChild(toast);
 
-    setTimeout(function() {
-        toast.className += " show";
-    }, 100);
+    <!-- Google Analytics script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ8PJX91MT"></script>
 
-    setTimeout(function() {
-        toast.className = toast.className.replace(" show", "");
-        document.body.removeChild(toast);
-    }, 3000);
-    }
-
-    // Mesaj gönderildikten sonra çağır
-   </script>
     <!-- EmailJS script -->
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("WGQREoXc_PaSGe87_"); // Buraya doğru Public Key'i yerleştirin
-        })();
-    </script>
-
-    <script>
-        // Formun gönderim işlemi
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Formun varsayılan gönderim davranışını önler
-
-    // Kullanıcıdan alınan veriler
-    var templateParams = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
-
-    // EmailJS ile mail gönderimi
-    emailjs.send('service_1hm2ivv', 'template_os3q2m4', templateParams)
-        .then(function (response) {
-            document.getElementById('message-status').innerHTML = "Mesajınız başarıyla gönderildi!";
-            showToast("Mesajınız başarıyla gönderildi!"); // Mesaj gönderimi başarılı olunca toast göster
-        }, function (error) {
-            document.getElementById('message-status').innerHTML = "Mesaj gönderilirken bir hata oluştu.";
-        });
-
-    // Form alanlarını temizle
-    document.getElementById('contact-form').reset();
-});
-
-    </script>
-
-    <!-- Slider script -->
-    <script>
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            const totalSlides = slides.length;
-
-            if (index >= totalSlides) {
-                currentIndex = 0; 
-            } else if (index < 0) {
-                currentIndex = totalSlides - 1; 
-            } else {
-                currentIndex = index;
-            }
-
-            const sliderWrapper = document.querySelector('.slider-wrapper');
-            const offset = -currentIndex * 100; 
-            sliderWrapper.style.transform = `translateX(${offset}%)`;
-        }
-
-        document.querySelector('.next').addEventListener('click', function () {
-        showSlide(currentIndex + 1);
-        clearInterval(autoSlideInterval); // Otomatik geçişi durdur
-        });
-
-        document.querySelector('.prev').addEventListener('click', function () {
-        showSlide(currentIndex - 1);
-        clearInterval(autoSlideInterval); // Otomatik geçişi durdur
-        });
-       
-        setInterval(function () {
-            showSlide(currentIndex + 1);
-        }, 10000); // 5 saniye bekle
-    </script>
-
+    <!-- Custom scripts -->
+    <script src="./scripts.js"></script>
 </body>
 </html>
